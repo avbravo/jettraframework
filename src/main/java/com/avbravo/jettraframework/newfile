@@ -1,0 +1,29 @@
+public class Jettraframework {
+
+    public static void main(String[] args) throws IOException {
+        long start = System.currentTimeMillis();
+
+        System.out.println("\n___________________________________________________________________________");
+        System.out.println("                          JettraServer starting....");
+        // Crear un servidor HTTP en el puerto 8080
+        HttpServer server = HttpServer.create(new InetSocketAddress(8085), 0);
+
+        // Definir rutas
+        server.createContext("/users", new UserHandler());
+        server.createContext("/users/", new UserHandler());
+
+        // Iniciar el servidor
+        server.setExecutor(null); // Usa el executor por defecto
+        server.start();
+        long finish = System.currentTimeMillis();
+        long timeElapsed = finish - start;
+        JettraLogo.blurVision();
+        finish = System.currentTimeMillis();
+        timeElapsed = finish - start;
+        System.out.println("\n\n");
+
+        System.out.println("\tServer started in WITH TEST: " + timeElapsed + "ms");
+        System.out.println("Servidor iniciado en http://localhost:8085");
+    }
+}
+
