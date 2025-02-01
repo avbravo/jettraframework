@@ -5,7 +5,7 @@
 - [ ] Generar imagen de docker
 - [ ] Validar sitio con https
 - [ ] Usar java annotatiosn processing para generar los metodos GET
-- [ ] Implementar tokens/JWT from scracthc
+- [ ] Implementar tokens/JWT from scratch
 - [ ] Implementar CSC
 - [ ] Soporte para JmoordbCore
 - [ ] Soporte para CDI from Scratch
@@ -54,7 +54,7 @@ Empaquetar con
 
 ```shell
 
-mvn clean packager
+mvn clean package
 
 ---
 
@@ -67,6 +67,17 @@ Ejecutar con dependencias
 
 
 ---
+
+# Convertirlo en imagen de docker
+
+```shell
+docker build -t mi-aplicacion-java .
+
+```
+
+Ejecute la imagen
+
+
 ---
 
 ## Esto hay que cambiarlo
