@@ -220,7 +220,7 @@ The settings.xml elements could be referenced by using things like this (see als
 
 ${settings.localRepository}
 which references the location of the local repository. This is by default ${home}/.m2/repository.
-`
 
 
-``
+
+```
