@@ -104,8 +104,7 @@ public class JettraFramework {
                 long finish = System.currentTimeMillis();
                 long timeElapsed = finish - start;
                 JettraLogo.blurVision();
-                finish = System.currentTimeMillis();
-                timeElapsed = finish - start;
+             
                 System.out.println("\n\n");
 
                 System.out.println("\tServer started in WITH TEST: " + timeElapsed + "ms");
