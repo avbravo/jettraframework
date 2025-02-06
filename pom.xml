@@ -27,6 +27,11 @@
             <version>${auto-service.version}</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>com.avbravo.jmoordb.core.processor</groupId>
+            <artifactId>jmoordb-core-annotations</artifactId>
+            <version>2.0.3</version>
+        </dependency>
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

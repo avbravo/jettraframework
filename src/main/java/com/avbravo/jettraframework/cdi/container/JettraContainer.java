@@ -8,14 +8,14 @@ package com.avbravo.jettraframework.cdi.container;
  *
  * @author avbravo
  */
-import com.avbravo.jettraframework.cdi.Inject;
-import com.avbravo.jettraframework.cdi.Prototype;
-import com.avbravo.jettraframework.cdi.Singleton;
+import com.avbravo.jettraframework.cdi.*;
+import com.jmoordb.core.annotation.repository.Repository;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class JettraContainer {
+
     private final Map<Class<?>, Object> singletonBeans = new HashMap<>();
     private final Map<Class<?>, Class<?>> beanDefinitions = new HashMap<>();
 
@@ -23,7 +23,23 @@ public class JettraContainer {
         List<Class<?>> classes = JettraClassScanner.scanPackage(packageName);
 
         for (Class<?> clazz : classes) {
-            if (clazz.isAnnotationPresent(Singleton.class) || clazz.isAnnotationPresent(Prototype.class)) {
+            if (clazz.isAnnotationPresent(ApplicationScoped.class)
+                    || clazz.isAnnotationPresent(ClientScoped.class)
+                    || clazz.isAnnotationPresent(Controller.class) 
+                    || clazz.isAnnotationPresent(Disposes.class)
+                    || clazz.isAnnotationPresent(Inject.class) 
+                    || clazz.isAnnotationPresent(Named.class)
+                    || clazz.isAnnotationPresent(ParamConverter.class) 
+                    || clazz.isAnnotationPresent(PostConstruct.class)
+                    || clazz.isAnnotationPresent(Produces.class)
+                    || clazz.isAnnotationPresent(Prototype.class)
+                    || clazz.isAnnotationPresent(RequestScoped.class) 
+                    || clazz.isAnnotationPresent(SessionScoped.class)
+                    || clazz.isAnnotationPresent(Singleton.class) 
+                    || clazz.isAnnotationPresent(ViewScoped.class)
+                    || clazz.isAnnotationPresent(WebApplicationException.class) 
+                    ||clazz.isAnnotationPresent(Repository.class )
+                    ) {
                 registerBean(clazz);
             }
         }
